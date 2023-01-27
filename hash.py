@@ -9,7 +9,7 @@ import pywhatkit as pk
 import webbrowser
 from requests import get
 from pynput.keyboard import Controller as ck
-
+import wikipedia
 
 #import dependencies 
 import user
