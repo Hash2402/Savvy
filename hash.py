@@ -106,6 +106,13 @@ if __name__=="__main__":
                 os.startfile(new_path)
         elif "open command prompt" in task:
             os.system("start cmd")
+            
+        elif 'wikipedia' in task:
+            sav("Searching wikipedia...")
+            task = task.replace("wikipedia","")
+            result = wikipedia.summary(task, sentences = 2)
+            sav(result)
+            
         elif "ip" in task :
             res=get('https://api.ipify.org').text
             sav(res)
@@ -145,7 +152,13 @@ if __name__=="__main__":
                 new_path=Drive+":\\Windows\\PowerPoint.exe"
                 print(new_path)
                 os.startfile(new_path)
-        
+                
+        elif 'open google' in task:
+            webbrowser.open("google.com") 
+
+        elif 'open youtube' in task:
+            webbrowser.open("youtube.com")
+            
         elif "Open camera" in task :
             not_path="C:\\Windows\\.exe"
             if os.path.exists(not_path):
