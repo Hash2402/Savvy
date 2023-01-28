@@ -176,6 +176,12 @@ if __name__=="__main__":
             codepath = "C:\\Users\\SHUBHAM GAIKWAD\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"
             os.startfile(codepath)    
             
+        elif 'play music' in task:
+            music_dir = 'E:\\audio'
+            songs = os.listdir(music_dir)
+            print(songs)
+            os.startfile(os.path.join(music_dir, songs[0]))
+            
         elif "Open camera" in task :
             not_path="C:\\Windows\\.exe"
             if os.path.exists(not_path):
