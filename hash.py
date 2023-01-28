@@ -168,6 +168,14 @@ if __name__=="__main__":
         elif 'open adcet website' in task:
             webbrowser.open("https://adcet.ac.in/ADCET/")
             
+        elif 'open code' in task:
+            codepath = "C:\\Users\\SHUBHAM GAIKWAD\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
+            os.startfile(codepath)
+
+        elif 'open telegram' in task:
+            codepath = "C:\\Users\\SHUBHAM GAIKWAD\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"
+            os.startfile(codepath)    
+            
         elif "Open camera" in task :
             not_path="C:\\Windows\\.exe"
             if os.path.exists(not_path):
