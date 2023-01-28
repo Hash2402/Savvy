@@ -159,6 +159,15 @@ if __name__=="__main__":
         elif 'open youtube' in task:
             webbrowser.open("youtube.com")
             
+        elif 'open stack overflow' in task:
+            webbrowser.open("stackoverflow.com")
+
+        elif 'open github' in task:
+            webbrowser.open("github.com")
+
+        elif 'open adcet website' in task:
+            webbrowser.open("https://adcet.ac.in/ADCET/")
+            
         elif "Open camera" in task :
             not_path="C:\\Windows\\.exe"
             if os.path.exists(not_path):
