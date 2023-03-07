@@ -175,7 +175,32 @@ if __name__=="__main__":
 
         elif 'open telegram' in task:
             codepath = "C:\\Users\\SHUBHAM GAIKWAD\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"
-            os.startfile(codepath)    
+            os.startfile(codepath)   
+            
+            
+        elif 'how are you' in task:
+            sav("I am fine and ready to work for you.")
+
+        elif 'what is your name' in task:
+            sav("it's savvy your virtual assistant")
+
+        elif 'tell me todays schedule' in task:
+            sav("check out todo list for schedule")
+
+        elif 'what can you do for me' in task:
+            sav("I can do all tasks a assistant can do like playing music, opening apps, etc.")
+            
+        elif 'who is' in task:
+            person = task.replace('who is', '')
+            info = wikipedia.summary(person,1)
+            print(info)
+            sav(info)
+
+        elif 'what is' in task:
+            know = task.replace('what is', '')
+            info = wikipedia.summary(know,1)
+            print(info)
+            sav(info)
             
             
         elif "delete folder" in task:
