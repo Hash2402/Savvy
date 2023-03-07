@@ -10,6 +10,7 @@ import webbrowser
 from requests import get
 from pynput.keyboard import Controller as ck
 import wikipedia
+import shutil
 
 #import dependencies 
 import user
@@ -175,6 +176,22 @@ if __name__=="__main__":
         elif 'open telegram' in task:
             codepath = "C:\\Users\\SHUBHAM GAIKWAD\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"
             os.startfile(codepath)    
+            
+            
+        elif "delete folder" in task:
+            #path input using voice .future
+            path =input()
+            try:
+                shutil.rmtree(path)
+            except FileNotFoundError:
+                print("File was not found: %s" % path)
+
+            except PermissionError:
+                print("You don't have permission to delete this type of file")    
+            except OSError:
+                print("Your OS does not allow to delete this type of file")
+            else:
+                print(path+"was deleted")
             
         elif 'play music' in task:
             music_dir = 'E:\\audio'
