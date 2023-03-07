@@ -203,6 +203,14 @@ if __name__=="__main__":
             sav(info)
             
             
+        elif 'how to' in task:
+            know = task.replace('how to', '')
+            info = wikipedia.summary(know,2)
+            print(info)
+            sav(info)
+            
+            
+            
         elif "delete folder" in task:
             #path input using voice .future
             path =input()
