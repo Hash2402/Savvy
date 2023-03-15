@@ -283,7 +283,7 @@ if __name__=="__main__":
             note =v_input()
             file.write(note)
             
-        #To display text written in file   
+        #To display files and text written in that files   
         elif "display notes" in task:
             sav("Showing Notes")
             file = open("myfile.txt", 'r')
