@@ -255,8 +255,7 @@ if __name__=="__main__":
                 Drive=v_input()
                 new_path=Drive+":\\Windows\\PowerPoint.exe"
                 print(new_path)
-                os.startfile(new_path)
-                
+                os.startfile(new_path)       
         #To delete all files from recycle bin          
         elif "delete recycle bin" in task:
                 winshell.recycle_bin().empty(
