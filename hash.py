@@ -105,8 +105,15 @@ if __name__=="__main__":
                 new_path=Drive+":\\Windows\\notepad.exe"
                 print(new_path)
                 os.startfile(new_path)
+                
+        elif "close notepad" in task:
+            os.system("taskkill /f /im notepad.exe")
+        
         elif "open command prompt" in task:
             os.system("start cmd")
+            
+        elif "close command prompt" in task:
+            os.system("taskkill /f /im cmd.exe")
             
         elif 'wikipedia' in task:
             sav("Searching wikipedia...")
@@ -142,6 +149,9 @@ if __name__=="__main__":
                 new_path=Drive+":\\Windows\\Word.exe"
                 print(new_path)
                 os.startfile(new_path)
+                
+        elif "close ms word" in task:
+            os.system("taskkill /f /im word.exe")
 
         elif "open powerpoint" in task :
             not_path="C:\\Windows\\PowerPoint.exe"
@@ -153,6 +163,9 @@ if __name__=="__main__":
                 new_path=Drive+":\\Windows\\PowerPoint.exe"
                 print(new_path)
                 os.startfile(new_path)
+                
+        elif "close powerpoint" in task:
+            os.system("taskkill /f /im PowerPoint.exe")
                 
         elif 'open google' in task:
             webbrowser.open("google.com") 
@@ -172,10 +185,16 @@ if __name__=="__main__":
         elif 'open code' in task:
             codepath = "C:\\Users\\SHUBHAM GAIKWAD\\AppData\\Local\\Programs\\Microsoft VS Code\\Code.exe"
             os.startfile(codepath)
+            
+        elif "close code" in task:
+            os.system("taskkill /f /im Code.exe")
 
         elif 'open telegram' in task:
             codepath = "C:\\Users\\SHUBHAM GAIKWAD\\AppData\\Roaming\\Telegram Desktop\\Telegram.exe"
             os.startfile(codepath)   
+            
+        elif "close telegram" in task:
+            os.system("taskkill /f /im Telegram.exe")
             
             
         elif 'how are you' in task:
