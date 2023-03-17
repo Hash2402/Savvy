@@ -115,11 +115,92 @@ if __name__=="__main__":
         elif "close command prompt" in task:
             os.system("taskkill /f /im cmd.exe")
             
+        elif "start typing" in task:
+            query = ""
+            kb_keys = {"tab space":'\t',"exclamation":'!',"double quote":'"',"hash":'#',"dollar":'$',"percent":'%',"ampersand":'&',"single quote":"'","open parenthesis": '(',
+                       "close parenthesis": ')', "asterisk": '*',"plus":'+', "comma": ',', "hyphen":"-","minus":"-","full stop":".","dot":".","forward slash" :'/',"slash":"/",
+                       "back slash": "\\","backward slash":"\\","colon":":","semi colon":";","less than":"<","equal to": '=',"greater than": '>',"question mark": '?',
+                        "open square bracket": '[',"close square bracket":  ']',"caret": '^',"underscore": '_', "backtick":'`',"open curly bracket": '{',
+                         "bar": '|',"close curly bracket": '}', "tilde":'~' }
+
+            kb_num = {"zero":'0',"one": '1',"two": '2',"three": '3',"four": '4',"five": '5',"six": '6',"seven": '7',"eight": '8', "nine": '9'}
+
+            sav("what would you like to write?")
+
+            while "stop typing" not in query.lower():
+                query = v_input()
+                if "stop typing" in query :
+                    break
+                
+                elif "select all" in query:
+                    pyautogui.hotkey('ctrl', 'a')
+
+                elif "new line" in query or "press enter" in query:
+                    pyautogui.press('enter')
+
+                elif "backspace" in query:
+                    pyautogui.press('backspace')
+
+                elif "clear line" in query:
+                    with pyautogui.hold('shift'):
+                        pyautogui.press('home')
+                    pyautogui.press('backspace')
+
+                elif "clear word" in query:
+                    pyautogui.hotkey('ctrl', 'shift', 'left')
+                    pyautogui.press('backspace')
+
+                elif "undo" in query:
+                    pyautogui.hotkey('ctrl', 'z')
+                    
+                elif "redo"in query:
+                    pyautogui.hotkey('ctrl', 'y')
+
+                else:
+                    w_list = query.split(" ")
+                    l_index = len(w_list)
+                    index = 0
+                    while index<l_index:
+                        print(index)
+                        if w_list[index] == "num" or w_list[index] == "nam" or w_list[index] == "number":
+                            if w_list[index+1] in kb_num.values():
+                                w_list[index] = ""
+                            elif w_list[index+1] in kb_num.keys():
+                                w_list[index] = ""
+                                w_list[index+1] = kb_num[w_list[index+1]]
+
+                        if w_list[index] == "symbol":                    
+                            if w_list[index+1] in kb_keys.keys():
+                                w_list[index+1] = kb_keys[w_list[index+1]]
+                                w_list[index] = ""
+                            elif index+2 <= len(w_list)-1 and w_list[index+1]+" "+w_list[index+2] in kb_keys.keys():
+                                    w_list[index+1] = kb_keys[w_list[index+1]+" "+w_list[index+2]]
+                                    w_list[index] = ""
+                                    l_index -=1
+                                    w_list.pop(index+2)
+                            elif index+3 <= len(w_list)-1 and w_list[index+1]+" "+w_list[index+2]+" "+w_list[index+3] in kb_keys.keys():
+                                    w_list[index+1] = kb_keys[w_list[index+1]+" "+w_list[index+2]+" "+w_list[index+3]]
+                                    w_list[index] = ""
+                                    l_index -=2
+                                    w_list.pop(index+2)                                    
+                                    w_list.pop(index+2)
+                        index +=1
+
+                    query1 = " ".join(w_list)
+
+                    pyautogui.typewrite(" "+query1)
+            
         elif 'wikipedia' in task:
             sav("Searching wikipedia...")
             task = task.replace("wikipedia","")
             result = wikipedia.summary(task, sentences = 2)
             sav(result)
+            
+        elif "press enter" in task:
+            pyautogui.press('enter')
+            
+        elif "switch window" in task or "which window" in task:
+            pyautogui.hotkey('alt', 'tab')
             
         elif "ip" in task :
             res=get('https://api.ipify.org').text
