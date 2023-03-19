@@ -14,6 +14,7 @@ import wikipedia
 import shutil
 import smtplib
 import winshell
+import pyautogui
 
 #import dependencies 
 import user
