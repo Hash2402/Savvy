@@ -175,7 +175,6 @@ if __name__=="__main__":
                     l_index = len(w_list)
                     index = 0
                     while index<l_index:
-                        print(index)
                         if w_list[index] == "num" or w_list[index] == "nam" or w_list[index] == "number":
                             if w_list[index+1] in kb_num.values():
                                 w_list[index] = ""
