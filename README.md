@@ -1,42 +1,41 @@
-Savvy - Desktop Based Virtual Assistant
-Savvy is a desktop-based virtual assistant designed to assist users in various tasks through voice commands. Built using Python and several Python libraries, Savvy aims to simplify everyday computing tasks by leveraging speech recognition and automation.
+# Savvy - Desktop Based Virtual Assistant
+### Savvy is a desktop-based virtual assistant designed to assist users in various tasks through voice commands. Built using Python and several Python libraries, Savvy aims to simplify everyday computing tasks by leveraging speech recognition and automation.
 
-Features
+## Features
 Voice Commands: Savvy responds to user voice commands for a hands-free experience.
 Application Control: Open and close applications using voice commands.
 Web Navigation: Open websites and perform tasks on them through voice instructions.
 Automated Messaging: Send automated speech-based WhatsApp messages.
 Text Typing: Type in any text editor based on user speech.
 Email Automation: Send emails using voice commands.
-Technologies Used
+## Technologies Used
 Python: Core programming language used for development.
 Speech Recognition: For processing and recognizing user voice commands.
 PyQt5: For the graphical user interface.
 Whatkit: For WhatsApp automation.
 PyAutoGUI: For controlling mouse and keyboard operations.
 Other Libraries: Additional Python libraries for various functionalities.
-Installation
+## Installation
 Clone the repository:
-bash
-Copy code
+
+
 git clone https://github.com/your-username/savvy-virtual-assistant.git
 Navigate to the project directory:
-bash
-Copy code
+
 cd savvy-virtual-assistant
 Install the required dependencies:
-bash
-Copy code
+
 pip install -r requirements.txt
-Usage
+
+unzip the savvy file for more info
+## Usage
 Run the main script to start Savvy:
 
-bash
-Copy code
+
 python savvy.py
 Follow the on-screen instructions to interact with Savvy through voice commands.
 
-Contributing
+## Contributing
 Contributions are welcome! If you'd like to contribute to Savvy, please follow these steps:
 
 Fork the repository.
@@ -44,10 +43,10 @@ Create a new branch: git checkout -b feature-branch.
 Make your changes and commit them: git commit -m 'Add new feature'.
 Push to the branch: git push origin feature-branch.
 Submit a pull request.
-License
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contact
-For any questions or suggestions, please feel free to contact me at [your-email@example.com].
+## Contact
+For any questions or suggestions, please feel free to contact me at harsh24exp@gmail.com.
 
 Thank you for using Savvy! We hope it makes your computing tasks easier and more efficient.
